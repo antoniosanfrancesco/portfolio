@@ -135,6 +135,7 @@
           overflow: auto;
           background-color: rgb(0, 0, 0);
           background-color: rgba(0, 0, 0, 0.9);
+          cursor: zoom-in;
         }
 
         .modal-content {
@@ -145,7 +146,7 @@
         }
 
         .modal-content {
-          animation:zoom 0.3;
+          animation:zoom 0.3s;
         }
 
         @keyframes zoom {
@@ -168,6 +169,12 @@
           color: #bbb;
           text-decoration: none;
           cursor: pointer;
+        }
+
+        @media screen and (max-width: 390px) {
+          body {
+            background-color: beige;
+           }
         }
     </style>
 
@@ -273,7 +280,7 @@
   <!--contenitore di immagine -->
   
     <div id="fullscreenContainer" class="modal">
-      <span class="close"> &times;</span>
+      <span id="closeButton" class="close"> &times;</span>
       <img id="fullscreenImage" class="modal-content"src="" alt="">
     </div>
 
@@ -290,7 +297,7 @@
               <p class="lead text-body-secondary" style="font-size: small;">Coppia di turisti in una delle vie principali<br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button id="openButton" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button id="primoButton" type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 </div>
               </div>
             </div>
@@ -439,159 +446,38 @@
 </footer>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!--Script prima immagine-->
-    <script>
-      var openButton = document.getElementById("openButton");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
+    <!--Funzione che prende le immagini e le mette fullscreen-->
+    <script>function viewImage(button, idImg) {
+            var fullscreenContainer = document.getElementById("fullscreenContainer");
+            var fullscreenImage = document.getElementById("fullscreenImage");
 
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
+            button.addEventListener("click", function() {
+              fullscreenImage.src = idImg.getAttribute("src");
+              fullscreenContainer.style.display = "inline";
       });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
+    } 
     </script>
 
-<!--Script seconda immagine-->
+    <!--Script che chiude immagine una volta ingrandita, per il pulsante close-->
     <script>
-      var openButton = document.getElementById("openButton-2");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-2");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
+      var closeBtt = document.getElementById("closeButton");
+      closeBtt.addEventListener("click", function() {
+        fullscreenContainer.style.display = "none";
       });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
+      
     </script>
-
-<!--Script terza immagine-->
+    <!--Script per selezionare le immagini -->
     <script>
-      var openButton = document.getElementById("openButton-3");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-3");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
+      viewImage(document.getElementById("primoButton"), document.getElementById("image-id"));
+      viewImage(document.getElementById("openButton-2"), document.getElementById("image-id-2"));
+      viewImage(document.getElementById("openButton-3"), document.getElementById("image-id-3"));
+      viewImage(document.getElementById("openButton-4"), document.getElementById("image-id-4"));
+      viewImage(document.getElementById("openButton-5"), document.getElementById("image-id-5"));
+      viewImage(document.getElementById("openButton-6"), document.getElementById("image-id-6"));
+      viewImage(document.getElementById("openButton-7"), document.getElementById("image-id-7"));
+      viewImage(document.getElementById("openButton-8"), document.getElementById("image-id-8"));
+      viewImage(document.getElementById("openButton-9"), document.getElementById("image-id-9"));
     </script>
-
-
-    <!--Script quarta immagine-->
-    <script>
-      var openButton = document.getElementById("openButton-4");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-4");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
-    </script>
-
-
-    <!--Script quinta immagine-->
-    <script>
-      var openButton = document.getElementById("openButton-5");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-5");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
-    </script>
-
-    <!--Script sesta immagine-->
-    <script>
-      var openButton = document.getElementById("openButton-6");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-6");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
-    </script>
-
-    <!--Script settima immagine-->
-    <script>
-      var openButton = document.getElementById("openButton-7");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-7");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
-    </script>
-
-    <!--Script ottava immagine-->
-    <script>
-      var openButton = document.getElementById("openButton-8");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-8");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
-    </script>
-
-    <!--Script nona immagine-->
-    <script>
-      var openButton = document.getElementById("openButton-9");
-      var fullscreenContainer = document.getElementById("fullscreenContainer");
-      var fullscreenImage = document.getElementById("fullscreenImage");
-
-      openButton.addEventListener("click", function() {
-          var imageElement = document.getElementById("image-id-9");
-          fullscreenImage.src = imageElement.getAttribute("src");
-          fullscreenContainer.style.display = "inline";
-      });
-
-      fullscreenContainer.addEventListener("click", function() {
-          fullscreenContainer.style.display = "none";
-      });
-    </script>
+    
    </body>
 </html>
