@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
-
+  <head>
+    <script src="../assets/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -10,177 +10,12 @@
     <title>Portfolio</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
-    
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-      .fullscreenContainer {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 1609px;
-        background-color: rgba(0, 0, 0, 0.7);
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        }
-
-        .fullscreenImage {
-            max-width: 1609px;
-        }
-
-        .openButton {
-            cursor: pointer;
-        }
-        .image-id{
-          max-width: 1320px;;
-          cursor: pointer;
-        }
-
-        img {
-          max-width: 1609px;
-        }
-
-        /* rende il backgroud dell'immagine ingrandita scura*/
-        .modal {
-          display: none;
-          position: fixed;
-          z-index: 1;
-          padding-top: 100px;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: auto;
-          background-color: rgb(0, 0, 0);
-          background-color: rgba(0, 0, 0, 0.9);
-          cursor: zoom-in;
-        }
-
-        .modal-content {
-          margin: auto;
-          display: block;
-          width: 80%;
-          max-width: 1609px;
-        }
-
-        .modal-content {
-          animation:zoom 0.3s;
-        }
-
-        @keyframes zoom {
-          from {transform: scale(0);}
-          to {transform: scale(1);}
-          
-        }
-
-        .close {
-          position: absolute;
-          top: 15px;
-          right: 35px;
-          color: beige;
-          font-size: 40px;
-          font-weight: bold;
-          transition: 0.3s;
-        }
-
-        .close:hover, .close:focus {
-          color: #bbb;
-          text-decoration: none;
-          cursor: pointer;
-        }
-
-        @media screen and (max-width: 390px) {
-          body {
-            background-color: beige;
-            max-width: 390px;
-           }
-        }
-    </style>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/albumStyle.css" rel="stylesheet">
 
     
-  </head>
+</head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
@@ -280,9 +115,9 @@
 
   <!--contenitore di immagine -->
   
-    <div id="fullscreenContainer" class="modal">
+    <div id="fullscreenContainer" class="modal fullscreenContainer">
       <span id="closeButton" class="close"> &times;</span>
-      <img id="fullscreenImage" class="modal-content"src="" alt="">
+      <img id="fullscreenImage" class="modal-content fullscreenImage" src="" alt="">
     </div>
 
 
@@ -293,12 +128,12 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id" src='img/DSCF3054.JPG' class="card-img-top img-id" alt="...">
+            <img id="image-id-1" src='../img/DSCF3054.JPG' class="card-img-top img-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Coppia di turisti in una delle vie principali<br></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button id="primoButton" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button id="openButton-1" type="button" class="btn btn-sm btn-outline-secondary openButton">View</button>
                 </div>
               </div>
             </div>
@@ -308,7 +143,7 @@
         <!--Seconda immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-2" src='img/DSCF3052.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-2" src='../img/DSCF3052.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;"> Artista di strada<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -323,7 +158,7 @@
         <!--Terza immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-3" src='img/DSCF3050.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-3" src='../img/DSCF3050.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Diagon alley <br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -339,7 +174,7 @@
         <!--Quarta Immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-4" src='img/DSCF3185.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-4" src='../img/DSCF3185.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;"> Edimburgo di notte<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -355,7 +190,7 @@
         <!--Quinta immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-5" src='img/DSCF3188.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-5" src='../img/DSCF3188.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Princess Street<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -371,7 +206,7 @@
         <!--Sesta immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-6" src='img/DSCF3202.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-6" src='../img/DSCF3202.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Princess Garden<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -387,7 +222,7 @@
         <!--Settima Immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-7" src='img/DSCF3234.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-7" src='../img/DSCF3234.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Scotland Museum<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -403,7 +238,7 @@
         <!--Ottava immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-8" src='img/DSCF3290.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-8" src='../img/DSCF3290.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Calton Hill<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -419,7 +254,7 @@
         <!--Nona immagine-->
         <div class="col">
           <div class="card shadow-sm">
-            <img id="image-id-9" src='img/DSCF3041.JPG' class="card-img-top image-id" alt="...">
+            <img id="image-id-9" src='../img/DSCF3041.JPG' class="card-img-top image-id" alt="...">
             <div class="card-body">
               <p class="lead text-body-secondary" style="font-size: small;">Cattedrale di Sant'Egidio<br></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -446,39 +281,6 @@
   </div>
 </footer>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!--Funzione che prende le immagini e le mette fullscreen-->
-    <script>function viewImage(button, idImg) {
-            var fullscreenContainer = document.getElementById("fullscreenContainer");
-            var fullscreenImage = document.getElementById("fullscreenImage");
-
-            button.addEventListener("click", function() {
-              fullscreenImage.src = idImg.getAttribute("src");
-              fullscreenContainer.style.display = "inline";
-      });
-    } 
-    </script>
-
-    <!--Script che chiude immagine una volta ingrandita, per il pulsante close-->
-    <script>
-      var closeBtt = document.getElementById("closeButton");
-      closeBtt.addEventListener("click", function() {
-        fullscreenContainer.style.display = "none";
-      });
-      
-    </script>
-    <!--Script per selezionare le immagini -->
-    <script>
-      viewImage(document.getElementById("primoButton"), document.getElementById("image-id"));
-      viewImage(document.getElementById("openButton-2"), document.getElementById("image-id-2"));
-      viewImage(document.getElementById("openButton-3"), document.getElementById("image-id-3"));
-      viewImage(document.getElementById("openButton-4"), document.getElementById("image-id-4"));
-      viewImage(document.getElementById("openButton-5"), document.getElementById("image-id-5"));
-      viewImage(document.getElementById("openButton-6"), document.getElementById("image-id-6"));
-      viewImage(document.getElementById("openButton-7"), document.getElementById("image-id-7"));
-      viewImage(document.getElementById("openButton-8"), document.getElementById("image-id-8"));
-      viewImage(document.getElementById("openButton-9"), document.getElementById("image-id-9"));
-    </script>
-    
+    <script src="../assets/js/view-Image.js"></script>
    </body>
 </html>
